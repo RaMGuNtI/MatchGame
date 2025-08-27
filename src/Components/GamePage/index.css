@@ -1,22 +1,104 @@
-.gamepage {
+.gamepage,
+.gamepage1 {
   background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-bg.png');
   background-size: cover;
-  height: 90vh;
+  background-position: center;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  padding: 20px;
 }
 
 .probImage {
-  height: 300px;
+  max-height: 300px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
 }
 
 .solImg {
   height: 100px;
+  width: auto;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.timer-section {
-  
+.solImg:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.pos {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Score Card */
+.game-end-card {
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-end-card img.card {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4); */
+}
+
+/* Trophy Image */
+.trophy-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.trophy-pic {
+  max-height: 200px;
+  width: auto;
+  display: block;
+}
+
+.game-end-card h2,
+.game-end-card p {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.game-end-card h2 {
+  top: 20%;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.game-end-card p {
+  top: 40%;
+  font-size: 1.5rem;
+}
+
+.content {
+  position: absolute;
+  text-align: center;
+  top: 70%;
+  left: 47%;
+  z-index: 3;
 }
