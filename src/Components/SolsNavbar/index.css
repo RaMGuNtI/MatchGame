@@ -1,0 +1,25 @@
+
+.solspics{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 10px;
+}
+
+.solsImg {
+  height: 100px;
+  max-width: 100px;
+
+}
+
+.sols-navbar {
+  display: flex;
+  justify-self: center;
+  margin: 10px;
+  color: white;
+}
+
+.sols-navbar > * {
+  cursor: pointer;
+  margin-right: 15px;
+  font-family: sans-serif;
+}

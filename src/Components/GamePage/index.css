@@ -1,0 +1,22 @@
+.gamepage {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-bg.png');
+  background-size: cover;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.probImage {
+  height: 300px;
+}
+
+.solImg {
+  height: 100px;
+}
+
+.timer-section {
+  
+}
