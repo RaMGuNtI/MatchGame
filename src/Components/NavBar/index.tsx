@@ -1,10 +1,17 @@
 import { Component, type ReactNode } from 'react';
 import './index.css';
+import {
+  NavBarSection,
+  RightPartNav,
+  TimerLogo,
+  TimerSection,
+  WebLogo,
+} from '../../styledComponents';
 
 interface NavBarProps {
   score: number;
   onTimeEnd: () => void;
-  resetKey: number; // triggers timer reset
+  resetKey: number;
 }
 
 interface NavBarState {
@@ -46,30 +53,29 @@ class NavBar extends Component<NavBarProps, NavBarState> {
 
   render(): ReactNode {
     return (
-      <div className="navbar-section">
-        <div className="logo-section">
-          <img
+      <NavBarSection>
+        <div>
+          <WebLogo
             src="https://assets.ccbp.in/frontend/react-js/match-game-website-logo.png"
-            className="logo"
+            height="30px"
             alt="logo"
           />
         </div>
-        <div className="right-side">
-          <div className="score-section">
+        <RightPartNav>
+          <div>
             <p>
               Score: <span>{this.props.score}</span>
             </p>
           </div>
-          <div className="timer-section">
-            <img
+          <TimerSection>
+            <TimerLogo
               src="https://assets.ccbp.in/frontend/react-js/match-game-timer-img.png"
-              className="timer-logo"
               alt="timer"
             />
             <h3>{this.state.time} sec</h3>
-          </div>
-        </div>
-      </div>
+          </TimerSection>
+        </RightPartNav>
+      </NavBarSection>
     );
   }
 }

@@ -3,17 +3,26 @@ import './index.css';
 import { ImageCollection } from '../../assests';
 import SolsNavbar from '../SolsNavbar';
 import NavBar from '../NavBar';
-
+import {
+  GamePageCSS,
+  PositioningGameEnd,
+  GameEndCard,
+  TrophyBox,
+  GameEndCardContent,
+  ScoreImgCard,
+  TrophyPic,
+  ProbImage,
+} from '../../styledComponents';
 interface GamePageState {
   mainCat: number;
   mainImgIndex: number;
   score: number;
   gameOver: boolean;
-  resetKey: number; // triggers NavBar timer reset
+  resetKey: number;
 }
 
-class GamePage extends Component<{}, GamePageState> {
-  state: GamePageState = {
+class GamePage extends Component<void, GamePageState> {
+  state = {
     mainCat: Math.floor(Math.random() * 3),
     mainImgIndex: Math.floor(Math.random() * 10),
     score: 0,
@@ -58,39 +67,33 @@ class GamePage extends Component<{}, GamePageState> {
           resetKey={resetKey}
         />
         {gameOver ? (
-          <div className="gamepage1">
-            <div className="pos">
-              <div className="game-end-card">
-                <img
-                  src="https://assets.ccbp.in/frontend/react-js/match-game-score-card-lg-bg.png"
-                  className="card"
-                />
-              </div>
-              <div className="trophy-box">
-                <img
-                  className="trophy-pic"
-                  src="https://assets.ccbp.in/frontend/react-js/match-game-trophy.png"
-                />
-              </div>
-              <div className="content">
+          <GamePageCSS>
+            <PositioningGameEnd>
+              <GameEndCard>
+                <ScoreImgCard src="https://assets.ccbp.in/frontend/react-js/match-game-score-card-lg-bg.png" />
+              </GameEndCard>
+              <TrophyBox>
+                <TrophyPic src="https://assets.ccbp.in/frontend/react-js/match-game-trophy.png" />
+              </TrophyBox>
+              <GameEndCardContent>
                 <h2>Your Score</h2>
                 <h1>{score}</h1>
                 <button onClick={this.handleTryAgain}>Try Again</button>
-              </div>
-            </div>
-          </div>
+              </GameEndCardContent>
+            </PositioningGameEnd>
+          </GamePageCSS>
         ) : (
-          <div className="gamepage">
+          <GamePageCSS>
             <h2>Score: {score}</h2>
-            <div className="gameprob">
-              <img
+            <div>
+              <ProbImage
                 src={ImageCollection[mainCat][mainImgIndex]}
                 className="probImage"
                 alt="main"
               />
             </div>
             <SolsNavbar onImageClick={this.handleClick} />
-          </div>
+          </GamePageCSS>
         )}
       </div>
     );
