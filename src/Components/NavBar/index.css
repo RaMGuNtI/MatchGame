@@ -17,18 +17,18 @@
   align-items: center;
 }
 
-.right-side>*{
-    margin-right: 10px;
+.right-side > * {
+  margin-right: 10px;
 }
 
-.timer-logo{
-    height: 30px;
-    margin-right: 5px;
-    margin-left: 15px;
+.timer-logo {
+  height: 30px;
+  margin-right: 5px;
+  margin-left: 15px;
 }
 
-.timer-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.timer-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
